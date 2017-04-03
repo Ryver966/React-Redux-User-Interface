@@ -8,6 +8,7 @@ export default class NewUserForm extends Component {
     super(props);
     this.createUser = this.createUser.bind(this);
     this.closeAlert = this.closeAlert.bind(this);
+    this.goBack = this.goBack.bind(this);
 
     this.state = {
       isNewUserCreated: false,
@@ -20,6 +21,10 @@ export default class NewUserForm extends Component {
       isNewUserCreated: false,
       newUserNotCreated: false
     })
+  }
+
+  goBack() {
+    window.location.href = '/';
   }
 
   createUser() {
@@ -38,6 +43,10 @@ export default class NewUserForm extends Component {
         newUserNotCreated: false,
         isNewUserCreated: true
       })
+      firstName.value = '';
+      lastName.value = '';
+      age.value = '';
+      gender.value = '';
     }
   }
 
@@ -66,6 +75,7 @@ export default class NewUserForm extends Component {
             </select>
           </div>
           <input type='button' onClick={ this.createUser } className='form-control btn-success' value='Create User' />
+          <input type='button' onClick={ this.goBack } className='form-control btn-primary' value='Go Back' />
         </form>
       </div>
     )

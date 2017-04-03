@@ -19,16 +19,17 @@
   margin: 60px auto;
   border-radius: 25px;
   position: relative;
-  top: 5px;
+  top: 2%;
   border: solid 2px #000;
 }
 .user-form input{
   width: 55%;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .user-form input[type='number']{
   width: 20%;
+  margin-bottom: 5px;
 }
 .user-gender{
   width: 25%;
