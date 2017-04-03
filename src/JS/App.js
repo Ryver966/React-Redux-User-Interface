@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from '../logo.svg';
 import '../styles/CSS/App.css';
-import { Router, Route, Link } from 'react-router';
+import { browserHistory, Router, Route, Link, IndexRoute } from 'react-router';
+
+import WelcomeScreen from './components/WelcomeScreen';
+import SelectUserForm from './components/SelectUserForm';
 
 class App extends Component {
   render() {
@@ -11,9 +15,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>User Interface</h2>
         </div>
-        { this.props.children }
+        <Router history={ browserHistory }>
+          <Route path='/' component={ WelcomeScreen }>
+            <IndexRoute component={ SelectUserForm } />
+          </Route>
+        </Router>
       </div>
     );
   }
 }
- export default App;
+export default App;

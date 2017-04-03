@@ -1,0 +1,32 @@
+.main-container{
+  width: 100%;
+  height: calc(100% - 150px);
+  position: absolute;
+  top: 150px;
+  background-color: #717171;
+}
+.select-user-form{
+  background-color: #fff;
+  width: 50%;
+  padding-bottom: 20px;
+  margin: 60px auto;
+  border-radius: 25px;
+  position: relative;
+  top: 12.5%;
+}
+.select-user-form input{
+  width: 55%;
+  margin: auto;
+}
+.user-gender{
+  width: 25%;
+}
+.users-list{
+  width: 50%;
+  margin: auto;
+}
+@media screen and (max-width: 700px){
+  .select-user-form{
+    width: 100%;
+  }
+}
