@@ -68,7 +68,7 @@ export default class NewUserForm extends Component {
           <input type='number' className='form-control' id='age' placeholder='Age' />
           <div className='form-group'>
             <label htmlFor='gender'>Gender:</label>
-            <select id='gender'>
+            <select id='gender' className='form-control'>
               <option></option>
               <option>Male</option>
               <option>Female</option>
