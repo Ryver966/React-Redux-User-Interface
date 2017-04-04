@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 import { subscribeUsers } from '../actions/actions';
 
 class SelectUserForm extends Component {
-  componentWillMount() {
-    this.props.subscribeUsers();
-  }
 
   constructor(props) {
     super(props);
     this.gotoNewUsrForm = this.gotoNewUsrForm.bind(this)
+  }
+
+  componentWillMount() {
+    this.props.subscribeUsers;
   }
 
   gotoNewUsrForm() {
@@ -19,7 +20,7 @@ class SelectUserForm extends Component {
   }
 
   render() {
-    console.log(this.props.users)
+    this.props.subscribeUsers();
     return(
       <form className='user-form form-horizontal'>
         <h2>Select User</h2>
@@ -28,7 +29,9 @@ class SelectUserForm extends Component {
           <option>Male</option>
           <option>Female</option>
         </select><br />
-        <select className='users-list form-control' /><br />
+        <select className='users-list form-control' >
+          <option>{ this.props.users }</option>
+        </select><br />
         <input type='button' className='form-control btn-success' value='Select' />
         <input type='button' onClick={ this.gotoNewUsrForm } className='form-control btn-info' value='Create New User' />
       </form>

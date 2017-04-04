@@ -20,6 +20,6 @@ export function fetchUsers(user) {
 }
 export function subscribeUsers() {
   return function(dispatch) {
-    Users.on('value', (snap) => dispatch(fetchUsers(snap.val())))
+    Users.on('value', snap => dispatch(fetchUsers(snap.val())))
   }
 }
