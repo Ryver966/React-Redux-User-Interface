@@ -22,6 +22,7 @@ export function fetchUsers(user) {
 export function subscribeUsers() {
   return function(dispatch) {
     Users.on('child_added', snap => {
+      console.log(snap.name)
       dispatch(fetchUsers(snap.val()))
     })
   }

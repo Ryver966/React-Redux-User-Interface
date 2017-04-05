@@ -31,11 +31,6 @@ class SelectUserForm extends Component {
     return(
       <form className='user-form form-horizontal'>
         <h2>Select User</h2>
-        <select className='user-gender form-control'>
-          <option>All</option>
-          <option>Male</option>
-          <option>Female</option>
-        </select><br />
         <select className='users-list form-control' >
           { users }
         </select><br />
