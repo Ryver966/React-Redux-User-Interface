@@ -11,6 +11,7 @@ const config = {
   firebase.initializeApp(config);
 
   const Users = firebase.database().ref('Users');
+  const usersArr = []
 
 export function fetchUsers(user) {
   return {
@@ -20,6 +21,8 @@ export function fetchUsers(user) {
 }
 export function subscribeUsers() {
   return function(dispatch) {
-    Users.on('value', snap => dispatch(fetchUsers(snap.val())))
+    Users.on('child_added', snap => {
+      dispatch(fetchUsers(snap.val()))
+    })
   }
 }

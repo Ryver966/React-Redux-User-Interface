@@ -12,7 +12,7 @@ class SelectUserForm extends Component {
   }
 
   componentWillMount() {
-    this.props.subscribeUsers;
+    this.props.subscribeUsers();
   }
 
   gotoNewUsrForm() {
@@ -20,7 +20,14 @@ class SelectUserForm extends Component {
   }
 
   render() {
-    this.props.subscribeUsers();
+
+    let users;
+    if(this.props.users.users.length > 0) {
+      users = this.props.users.users.map(user => 
+        <option key={ user.id }>{ user.firstName } { user.lastName }</option>
+      )
+    }
+    
     return(
       <form className='user-form form-horizontal'>
         <h2>Select User</h2>
@@ -30,7 +37,7 @@ class SelectUserForm extends Component {
           <option>Female</option>
         </select><br />
         <select className='users-list form-control' >
-          <option>{ this.props.users }</option>
+          { users }
         </select><br />
         <input type='button' className='form-control btn-success' value='Select' />
         <input type='button' onClick={ this.gotoNewUsrForm } className='form-control btn-info' value='Create New User' />
