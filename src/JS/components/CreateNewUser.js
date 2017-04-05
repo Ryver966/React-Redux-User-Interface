@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/CSS/WelcomeScreen.css';
+import '../../styles/CSS/AppBody.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import { addUser } from '../actions/actions';
 
@@ -9,7 +9,6 @@ export default class NewUserForm extends Component {
     super(props);
     this.createUser = this.createUser.bind(this);
     this.closeAlert = this.closeAlert.bind(this);
-    this.goBack = this.goBack.bind(this);
 
     this.state = {
       isNewUserCreated: false,
@@ -22,10 +21,6 @@ export default class NewUserForm extends Component {
       isNewUserCreated: false,
       newUserNotCreated: false
     })
-  }
-
-  goBack() {
-    window.location.href = '/';
   }
 
   createUser() {
@@ -77,7 +72,7 @@ export default class NewUserForm extends Component {
             </select>
           </div>
           <input type='button' onClick={ this.createUser } className='form-control btn-success' value='Create User' />
-          <input type='button' onClick={ this.goBack } className='form-control btn-primary' value='Go Back' />
+          <input type='button' onClick={ this.props.goBack } className='form-control btn-primary' value='Go Back' />
         </form>
       </div>
     )

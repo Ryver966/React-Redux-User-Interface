@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/CSS/WelcomeScreen.css';
+import '../../styles/CSS/AppBody.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux';
 import { subscribeUsers } from '../actions/actions';
@@ -24,7 +24,7 @@ class SelectUserForm extends Component {
     let users;
     if(this.props.users.users.length > 0) {
       users = this.props.users.users.map(user => 
-        <option key={ user.id }>{ user.firstName } { user.lastName }</option>
+        <option key={ user.uid }>{ user.firstName } { user.lastName }</option>
       )
     }
 

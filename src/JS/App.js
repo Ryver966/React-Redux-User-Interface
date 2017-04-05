@@ -7,6 +7,7 @@ import { browserHistory, Router, Route, Link, IndexRoute } from 'react-router';
 import WelcomeScreen from './components/WelcomeScreen';
 import SelectUserForm from './components/SelectUserForm';
 import NewUserForm from './components/CreateNewUser';
+import UserPanel from './components/UserPanel';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path='/' component={ WelcomeScreen }>
             <IndexRoute component={ SelectUserForm } />
             <Route path='/NewUser' component={ NewUserForm } />
+            <Route path='/UserPanel' component={ UserPanel } />
           </Route>
         </Router>
       </div>
