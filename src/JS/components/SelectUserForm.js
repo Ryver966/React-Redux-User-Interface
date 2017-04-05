@@ -27,7 +27,7 @@ class SelectUserForm extends Component {
         <option key={ user.id }>{ user.firstName } { user.lastName }</option>
       )
     }
-    
+
     return(
       <form className='user-form form-horizontal'>
         <h2>Select User</h2>

@@ -26,3 +26,12 @@ export function subscribeUsers() {
     })
   }
 }
+export function addUser(firstName, lastName, age, gender) {
+  Users.push({
+    firstName: firstName,
+    lastName: lastName,
+    age: age,
+    gender: gender
+  })
+  console.log('test')
+}

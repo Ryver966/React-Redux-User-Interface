@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/WelcomeScreen.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+import { addUser } from '../actions/actions';
 
 export default class NewUserForm extends Component {
 
@@ -43,6 +44,7 @@ export default class NewUserForm extends Component {
         newUserNotCreated: false,
         isNewUserCreated: true
       })
+      addUser(firstName.value, lastName.value, age.value, gender.value);
       firstName.value = '';
       lastName.value = '';
       age.value = '';
