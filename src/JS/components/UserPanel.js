@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/AppBody.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+import { connect } from 'react-redux';
 
-export default class UserPanel extends Component {
+class UserPanel extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    console.log(this.props.user)
     return(
       <div className='user-panel-main'>
-        <h1>Name LastName</h1>
+        <h1>name lastname</h1>
         <div className='form-group'>
           <label htmlFor='age'>Age:</label>
           <p id='age'>AGE</p>
@@ -23,3 +25,11 @@ export default class UserPanel extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.selectedUser
+  }
+}
+
+export default connect(mapStateToProps)(UserPanel);

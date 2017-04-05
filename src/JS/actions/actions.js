@@ -35,3 +35,9 @@ export function addUser(firstName, lastName, age, gender) {
     uid: Date.now()
   })
 }
+export function selectUser(selectedUser) {
+  return {
+    type: 'SELECT_USER',
+    payload: selectedUser
+  }
+}
